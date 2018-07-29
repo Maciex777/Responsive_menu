@@ -1,0 +1,131 @@
+@font-face {
+	font-family: 'OpenSans-Regular';
+	src: url('../fonts/OpenSans/OpenSans-Regular.ttf');
+	src: local('☺'), url('../fonts/OpenSans/OpenSans-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'OpenSans-Bold';
+	src: url('../fonts/OpenSans/OpenSans-Bold.ttf');
+	src: local('☺'), url('../fonts/OpenSans/OpenSans-Bold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body{
+	background-color: #000;
+}
+
+header{
+	padding-left: 15%;
+}
+header, #logo{
+	float: left;
+	height: 100%;
+	display: flex;
+}
+#logo img{
+	width: 200px;
+}
+
+#menu{
+	float: right;
+	padding-right: 15%;
+	display: flex;
+	flex-direction: column;
+}
+
+#toggle {
+	position:absolute;
+	top:50px;
+	right:5%;
+	display: none;
+	width: 28px;
+	height: 30px;
+	z-index:6;
+}
+#toggle span:after,
+#toggle span:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: -9px;
+}
+#toggle span:after{
+	top: 9px;
+}
+#toggle span {
+	position: relative;
+	display: block;
+}
+#toggle span,
+#toggle span:after,
+#toggle span:before {
+	width: 100%;
+	height: 5px;
+	background-color:grey;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	border-radius: 2px;
+}
+#toggle.on + #menu {
+	display:block;
+}
+
+nav{
+	height: 100px;
+}
+nav ul{
+	order: 2;
+}
+nav ul li{
+	margin-top: 20px;
+	list-style-type: none;
+	float:left;
+	padding-bottom: 10px;
+}
+nav ul li a{
+	font-family: 'OpenSans-Bold', sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 30px;
+	color: #fff;
+}
+nav ul li a:hover{
+	color: #f93240;
+}
+
+#menu_contact{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+#menu_contact a{
+	font-family: 'OpenSans-Regular', sans-serif;
+	color:#f93240;
+	text-decoration: none;
+	padding: 20px;
+  padding-bottom: 0;
+	height: 23px;
+	display: flex;
+	align-items: center;
+}
+#menu_contact img{
+	padding-right: 10px;
+}
+
+#baner{
+	background: url("../img/baner.jpg") no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	height: 800px;
+}
+
+@media only screen and (max-width:1200px){
+	#toggle{ display:block; }
+	#menu{ display:none; }
+}
