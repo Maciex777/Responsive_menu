@@ -1,5 +1,7 @@
 var toggleMenu = document.getElementById("toggle");
 var menu = document.getElementById("menu");
+var baner = document.getElementById("baner");
+var logo = document.getElementById("logo");
 
 //hidding menu
 function hideMenu(){
@@ -8,8 +10,12 @@ function hideMenu(){
   logo.style.opacity = "1";
   //menu disappears when the animation ends
   menu.style.opacity = "0";
+  //close cross X before class "on" is removed
+  toggleMenu.classList.add("close")
+  //remove class "on" after animation ends
   setTimeout(function() {
     toggleMenu.classList.remove("on");
+    toggleMenu.classList.remove("close")
   }, 700);
 }
 
@@ -26,3 +32,11 @@ toggleMenu.onclick = function(event){
     logo.style.opacity = "0.4";
   }
 };
+
+//hide menu if user click outside of menu
+document.addEventListener("click", function(event) {
+  if (event.target.closest("#menu")) return;
+  if(toggleMenu.classList.contains("on")){
+      hideMenu();
+  }
+});
