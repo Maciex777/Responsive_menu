@@ -15,10 +15,17 @@
   <header>
     <a href="index.html" id="logo"><img src="./assets/img/logo.svg" alt="Logo"></a>
   </header>
-  <a href="#menu" id="toggle"><span></span></a>
+  <a href="#" id="toggle" class="navicon-button"><span class="navicon"></span></a>
   <div id="menu">
     <ul>
-      <li><a href="#">O firmie</a></li>
+      <li class="dropdown">
+        <a href="#">O firmie</a>
+        <div class="dropdown-content">
+          <a href="#">O nas</a>
+          <a href="#">Historia</a>
+          <a href="#">Zespół</a>
+        </div>
+      </li>
       <li><a href="#">Realizacje</a></li>
       <li><a href="#">Blog</a></li>
       <li><a href="#">Partnerzy</a></li>
@@ -40,5 +47,7 @@
   <!-- Footer -->
   <footer>
   </footer>
+
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
