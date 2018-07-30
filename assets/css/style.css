@@ -169,6 +169,53 @@ nav ul li a:hover{
 	animation: fadeIn 1.8s;
 }
 
+/* menu icon transforming into a cross X */
+.navicon-button {
+  display: inline-block;
+  position: relative;
+  transition: 0.25s;
+  user-select: none;
+}
+.navicon-button .navicon:before,
+.navicon-button .navicon:after {
+  transition: 0.25s;
+}
+.navicon-button:hover {
+  transition: 0.5s;
+  opacity: 1;
+}
+.navicon-button:hover .navicon:before,
+.navicon-button:hover .navicon:after {
+  transition: 0.25s;
+}
+
+.on:not(.steps) .navicon:before,
+.on:not(.steps) .navicon:after {
+  top: 0 !important;
+}
+.on .navicon:before,
+.on .navicon:after {
+  transition: 0.5s;
+}
+.on {
+  transform: scale(0.90);
+}
+#toggle.on .navicon {
+  background: transparent;
+}
+#toggle.on .navicon:before {
+  transform: rotate(-45deg);
+}
+#toggle.on .navicon:after {
+  transform: rotate(45deg);
+}
+#toggle.on.close .navicon {
+  background: #fff;
+}
+#toggle.on.close .navicon:before, #toggle.on.close .navicon:after {
+  transform: rotate(0deg);
+}
+
 #baner{
 	background: url("../img/baner.jpg") no-repeat;
 	background-size: cover;
